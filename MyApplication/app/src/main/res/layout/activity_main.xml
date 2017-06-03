@@ -14,7 +14,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/textView" />
+        android:id="@+id/usernametextview" />
 
     <Button
         android:id="@+id/gotoButton"
@@ -24,13 +24,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="#000000"
+        android:background="@android:color/darker_gray"
         android:text="GOTO"
-        android:textColor="#ffffffff"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/usernametextview"
         app:layout_constraintVertical_bias="0.5" />
 
 </android.support.constraint.ConstraintLayout>

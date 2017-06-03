@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="registration_form_all_caps">REGISTRATION FORM</string>
+    <string name="please_fill_up_your_form">Please fill up your form</string>
+    <string name="successfully_registered">Successfully Registered</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="colon">:</string>
+    <string name="username_all_caps">USERNAME</string>
+    <string name="password_all_caps">PASSWORD</string>
+    <string name="login_all_caps">LOGIN</string>
+    <string name="register_all_caps">REGISTER</string>
+    <string name="name_caps_withcolon">NAME:</string>
+    <string name="email_caps_withcolon">EMAIL:</string>
+    <string name="username_caps_withcolon">USERNAME:</string>
+    <string name="password_caps_withcolon">PASSWORD:</string>
+    <string name="user_details_all_caps">USER DETAILS</string>
+    <string name="user_registration_all_caps">USER REGISTRATION</string>
 </resources>
