@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.muhammed.myapplication.storage.AppStorageFactory;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button loginButton = null;
@@ -19,6 +21,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppStorageFactory.isUserLogged(this)) {
+            gotoActivity();
+
+        }
+
+
         setContentView(R.layout.activity_login);
         userEditText = (EditText) findViewById(R.id.usernameedittext);
         passwordEditText = (EditText) findViewById(R.id.passwordeditText);
@@ -35,7 +43,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginbutton:
-                if (userEditText.getText().toString().equalsIgnoreCase("musthafa") && passwordEditText.getText().toString().equals("musthu")) {
+
+                String username = AppStorageFactory.getUsername(this);
+                String password = AppStorageFactory.getPassword(this);
+
+                if (userEditText.getText().toString().equals(username) && passwordEditText.getText().toString().equals(password)) {
                     gotoActivity();
                 } else {
                     Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
@@ -44,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.registerButton :
                 Intent intent = new Intent(this, RegistrationActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
 
@@ -53,5 +66,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void gotoActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
+        finish();
     }
 }

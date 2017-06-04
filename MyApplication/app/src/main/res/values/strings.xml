@@ -18,4 +18,5 @@
     <string name="password_caps_withcolon">PASSWORD:</string>
     <string name="user_details_all_caps">USER DETAILS</string>
     <string name="user_registration_all_caps">USER REGISTRATION</string>
+    <string name="logout">LogOut</string>
 </resources>

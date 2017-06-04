@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.muhammed.myapplication.storage.AppStorage;
+import com.example.muhammed.myapplication.storage.AppStorageFactory;
+
 public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final String U_NAME = "NAME";
@@ -49,13 +52,21 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void gotoActivity() {
+
+        saveToPref();
+
         Intent intent= new Intent(this, HomeActivity.class);
-        intent.putExtra(U_NAME, registerNameEditText.getText().toString());
-        intent.putExtra(U_EMAIL, registerEmailEditText.getText().toString());
-        intent.putExtra(U_REGISTERUSERNAME, registerUsernameEditText.getText().toString());
-        intent.putExtra(U_REGISTERPASSWORD, registerPasswordEditText.getText().toString());
 
         startActivity(intent);
+        finish();
 
+    }
+
+    private void saveToPref() {
+        AppStorageFactory.insertUsername(registerUsernameEditText.getText().toString(),this);
+        AppStorageFactory.insertName(registerNameEditText.getText().toString(),this);
+        AppStorageFactory.insertEmail(registerEmailEditText.getText().toString(),this);
+        AppStorageFactory.insertPassword(registerPasswordEditText.getText().toString(),this);
+        AppStorageFactory.setUserLogged(true, this);
     }
 }
