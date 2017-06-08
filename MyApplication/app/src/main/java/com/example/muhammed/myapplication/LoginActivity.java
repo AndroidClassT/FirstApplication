@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.muhammed.myapplication.list.ListviewActivity;
 import com.example.muhammed.myapplication.storage.AppStorageFactory;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -53,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.registerButton :
+            case R.id.registerButton:
                 Intent intent = new Intent(this, RegistrationActivity.class);
                 startActivity(intent);
                 finish();
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void gotoActivity() {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, ListviewActivity.class);
         startActivity(intent);
         finish();
     }

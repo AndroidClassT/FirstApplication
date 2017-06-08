@@ -19,6 +19,7 @@
         <activity android:name=".HomeActivity" android:label="@string/user_details_all_caps"  />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistrationActivity" android:label="@string/user_registration_all_caps"></activity>
+        <activity android:name=".list.ListviewActivity" android:label="@string/contacts"></activity>
     </application>
 
 </manifest>
